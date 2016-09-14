@@ -2,7 +2,7 @@
 
 ##This directory contains the HW1 deliverables
 
-All work on this HW assignment was done by sbg389
+All work on this HW assignment was done by sbg389, with the exceptions of the forks and pulls that also involved each of the authors
 
 ![Screenshot 1 Assignment 2: my .bashrc](HW1_SS1.png)
 ###Figure I: screenshot of the .bashrc
