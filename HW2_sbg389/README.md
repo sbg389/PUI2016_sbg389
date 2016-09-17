@@ -17,6 +17,8 @@ The script uses the MTA Bus Time Developer API (http://bustime.mta.info/wiki/Dev
 The API is based on the SIRI Standard (Service Interface for Real Time Information http://user47094.vs.easily.co.uk/siri/) 
 The MTA allows developers to sign in to obtain an API key that enables querying the interface with a quota of 2 calls per mminute
 
+In order to obtain the specific information that is needed to craft the desired script output, we had to explore the result using the guidance of the SIRI
+
 
 ## Assignment 2: next stop information
 
