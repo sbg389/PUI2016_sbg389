@@ -12,13 +12,14 @@
 # thus the code will work both in python 2 and python 3
 from __future__ import print_function
 
-# the next import statemens allows to read and parse line input arguments
+# the next import statements allows to read and parse line input arguments
 # the argument validation is based on the argparse doc at https://docs.python.org/3/library/argparse.html
 import argparse
 
 # import package to parse the json format from the API output
 #https://docs.python.org/2/library/json.html
 import json
+import urllib2
 
 parser = argparse.ArgumentParser(description='Query MTA Bus Line')
 parser.add_argument('MTAKEY', help='The MTA Bus Time API Developer Key')
@@ -26,22 +27,35 @@ parser.add_argument('BUSLINE', help='The MTA Bus Line that we want to query')
 
 args = parser.parse_args()
 
-print (args.BUSLINE)
-print (args.MTAKEY)
-
-
 #Load the test API response from the file, we will use this while refining the parsing to avoind API quota depletion
-with open('mtaresponse.json') as mtaresponse:
-    mtadata = json.load(mtaresponse)
+#with open('mtaresponse.json') as mtaresponse:
+#    mtadataFile = json.load(mtaresponse)
 
 #Print using nice format provided by the json package
 #print (json.dumps (mtadata, sort_keys=True, indent=4, separators=(',', ': ')))
 
-#print (mtadata['Siri']['ServiceDelivery']['VehicleMonitoringDelivery']['VehicleActivity'])
+#Build the URI for the API Call concatenating the key and bus line from the argument parameters
+url = "http://bustime.mta.info/api/siri/vehicle-monitoring.json?key=%s&VehicleMonitoringDetailLevel=calls&" \
+      "LineRef=%s"%(args.MTAKEY, args.BUSLINE)
+
+#Get the response and load the string representation into a dictionary
+response = urllib2.urlopen(url)
+mtadataString = response.read().decode("utf-8")
+mtadata = json.loads(mtadataString)
+
+print (mtadataString)
+print(mtadata)
 
 vehicleActivityArray = mtadata['Siri']['ServiceDelivery']['VehicleMonitoringDelivery']
+numberOfActiveBuses = len(vehicleActivityArray[0]['VehicleActivity'])
 
-for vehicleActivity in vehicleActivityArray[0]['VehicleActivity']:
-    print (vehicleActivity)
 
-    print ('\n')
+print ("Bus Line: " + args.BUSLINE)
+print ("Number of Active Buses: " + str(numberOfActiveBuses))
+
+for i in range (0, numberOfActiveBuses):
+    print ("Bus " + str(i) + " is at latitude " + str(vehicleActivityArray[0]['VehicleActivity'][i] \
+       ['MonitoredVehicleJourney']['VehicleLocation']['Latitude']) + " and longiture " + \
+           str(vehicleActivityArray[0]['VehicleActivity'][i] \
+                   ['MonitoredVehicleJourney']['VehicleLocation']['Longitude'])
+           )
