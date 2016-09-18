@@ -1,11 +1,12 @@
 # Author: Sebastian Bania (sbg389), NYU, September 2016
 ##############################
-# This script retrieves and reports information about active vehicles for a given MTA bus line.
+# This script retrieves and reports information about the location (lat, lon) and next stop
+# for all active vehicles for a given MTA bus line and outputs it on a csv file
 # The script was developed as part of HW2 of PUI2016
 ##############################
-# The script has two arguments: the MTA Bus Time developer Key and the line number to be queried
+# The script has three arguments: the MTA Bus Time developer Key, the line number to be queried and the csv file name
 # i.e. run the code as
-#      python show_bus_location.py <MTAKEY> <MTA_BUS_LINE>
+#      python get_bus_info_sbg389.py <MTAKEY> <MTA_BUS_LINE> <MTS_BUS_LINE>.csv
 
 # the next line import packages that change the python 2 print function
 # so that it require the same syntax as python 3
@@ -21,9 +22,13 @@ import argparse
 import json
 import urllib2
 
+#import pandas (we will use dataframe to store the bus info and output to csv)
+import pandas as pd
+
 parser = argparse.ArgumentParser(description='Query MTA Bus Line')
 parser.add_argument('MTAKEY', help='The MTA Bus Time API Developer Key')
 parser.add_argument('BUSLINE', help='The MTA Bus Line that we want to query')
+parser.add_argument('OUTFILE', help='The path to thte output csv')
 
 args = parser.parse_args()
 
@@ -43,19 +48,25 @@ response = urllib2.urlopen(url)
 mtadataString = response.read().decode("utf-8")
 mtadata = json.loads(mtadataString)
 
-print (mtadataString)
-print(mtadata)
-
 vehicleActivityArray = mtadata['Siri']['ServiceDelivery']['VehicleMonitoringDelivery']
 numberOfActiveBuses = len(vehicleActivityArray[0]['VehicleActivity'])
 
+#Create the pandas dataframe to store the data
 
-print ("Bus Line: " + args.BUSLINE)
-print ("Number of Active Buses: " + str(numberOfActiveBuses))
+columns = ['Latitude','Longitude','Stop Name','Stop Status']
 
+df = pd.DataFrame(columns=columns)
+
+#iterate through all the active buses and dis[play their latitude and longitude
 for i in range (0, numberOfActiveBuses):
-    print ("Bus " + str(i) + " is at latitude " + str(vehicleActivityArray[0]['VehicleActivity'][i] \
-       ['MonitoredVehicleJourney']['VehicleLocation']['Latitude']) + " and longiture " + \
-           str(vehicleActivityArray[0]['VehicleActivity'][i] \
-                   ['MonitoredVehicleJourney']['VehicleLocation']['Longitude'])
-           )
+    df.loc[i,'Latitude'] = vehicleActivityArray[0]['VehicleActivity'][i] \
+       ['MonitoredVehicleJourney']['VehicleLocation']['Latitude']
+    df.loc[i,'Longitude'] = vehicleActivityArray[0]['VehicleActivity'][i] \
+       ['MonitoredVehicleJourney']['VehicleLocation']['Longitude']
+    df.loc[i,'Stop Status'] = vehicleActivityArray[0]['VehicleActivity'][i] \
+        ['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['Extensions']['Distances'] \
+        ['PresentableDistance']
+    df.loc[i,'Stop Name'] = vehicleActivityArray[0]['VehicleActivity'][i] \
+        ['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['StopPointName']
+
+df.to_csv(args.OUTFILE)
