@@ -57,16 +57,27 @@ columns = ['Latitude','Longitude','Stop Name','Stop Status']
 
 df = pd.DataFrame(columns=columns)
 
+
 #iterate through all the active buses and dis[play their latitude and longitude
 for i in range (0, numberOfActiveBuses):
     df.loc[i,'Latitude'] = vehicleActivityArray[0]['VehicleActivity'][i] \
        ['MonitoredVehicleJourney']['VehicleLocation']['Latitude']
     df.loc[i,'Longitude'] = vehicleActivityArray[0]['VehicleActivity'][i] \
        ['MonitoredVehicleJourney']['VehicleLocation']['Longitude']
-    df.loc[i,'Stop Status'] = vehicleActivityArray[0]['VehicleActivity'][i] \
-        ['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['Extensions']['Distances'] \
-        ['PresentableDistance']
-    df.loc[i,'Stop Name'] = vehicleActivityArray[0]['VehicleActivity'][i] \
-        ['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['StopPointName']
 
-df.to_csv(args.OUTFILE)
+    onwardCallsDict = vehicleActivityArray[0]['VehicleActivity'][i] \
+        ['MonitoredVehicleJourney']['OnwardCalls']
+
+    if (onwardCallsDict!={}):
+        df.loc[i,'Stop Status'] = vehicleActivityArray[0]['VehicleActivity'][i] \
+            ['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['Extensions']['Distances'] \
+            ['PresentableDistance']
+        df.loc[i,'Stop Name'] = vehicleActivityArray[0]['VehicleActivity'][i] \
+            ['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['StopPointName']
+    else:
+        df.loc[i,'Stop Status'] = 'N/A'
+        df.loc[i,'Stop Name'] = 'N/A'
+
+print (df)
+
+df.to_csv(args.OUTFILE, index=False)
