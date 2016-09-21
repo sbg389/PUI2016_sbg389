@@ -80,7 +80,7 @@ for i in range (0, numberOfActiveBuses):
         df.loc[i,'Stop Name'] = 'N/A'
 
 # Print statement to debug output
-print (df)
+# print (df)
 
 # write to file!
 df.to_csv(args.OUTFILE, index=False)
