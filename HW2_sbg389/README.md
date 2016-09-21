@@ -33,6 +33,23 @@ In order to obtain the specific information that is needed to craft the desired 
         Bus 7 is at latitude 40.701516 and longiture -73.963838
         Bus 8 is at latitude 40.690899 and longiture -73.989258
 
+The script implementation is relatively simple, and it mainly relies on three libraries:
+
+     argparse (https://docs.python.org/2/library/argparse.html)
+     json (https://docs.python.org/2/library/json.html)
+     urllib2 (https://docs.python.org/2/library/urllib2.html)
+    
+These packages provide clases and methods for handling Arguments, JSON enconding and making HTTP requests, two mechanisms that are  at the center of the interaction with the MTA API.
+
+The script flow follows:
+
+    -Import the required packages
+    -Parse the arguments from the script
+    -Build the URL using the known MTA API method and parameters (passed as script arguments)
+    -Invoke the api using the urllib2.urlopen method.
+    -Encode the response into a JSON object using the json.loads method
+    -Iterate through the response, fetch the desired elements and print using the desired format
+    
 ### Work Breakdown: 
 
 Mockup by Sebastian Bania. Peer refinements by 
@@ -46,6 +63,7 @@ Luis Fernando Melchor Fernandez
 The deliverable for this assigment builds upon the previous assignment, but in this case, the output will be written to a csv file.
 
 The script shares the first two parameters with the previous, but adds a third parameter that is used to specify the output file location.
+
 I choose to use a pandas Data Frame to store and format the results from the API and write the csv.
 
     The API Key (necessary to make calls agains the service)
@@ -66,8 +84,24 @@ I choose to use a pandas Data Frame to store and format the results from the API
         40.701974,-73.963196,WYTHE AV/KEAP ST,approaching
         40.693796,-73.987201,JAY ST/WILLOUGHBY ST,< 1 stop away
         40.738108,-73.952888,JACKSON AV/11 ST,< 1 stop away
+
+The script, buils upon the previous script, adding the pandas library, that is used mainly to store the data and output to CSV:
+
+     pandas (http://pandas.pydata.org/)
     
-### Work Breakdown: 
+Pandas provides high-performance, easy-to-use data structures and data analysis tools. We will specifcally use the dataframe structure and its native capabilities to export to csv
+
+The script flow follows:
+
+    -Import the required packages
+    -Parse the arguments from the script
+    -Build the URL using the known MTA API method and parameters (passed as script arguments)
+    -Invoke the api using the urllib2.urlopen method.
+    -Encode the response into a JSON object using the json.loads method
+    -Iterate through the response, fetch the desired elements and add them to a pandas dataframe
+    -Use the dataframe.to_csv
+    
+### Work Breakdown:
 
 Mockup by Sebastian Bania. Peer refinement, handling empty values and output formatting by 
 
@@ -75,8 +109,19 @@ Sofiya Elyukin
 Jonathan D Geis
 Luis Fernando Melchor Fernandez
 
-## Assignment 3: Read CSV files with pandas
+## Assignment 3 and Extra Credit Assignment: Read CSV files with pandas, work with dates in Pandas
 
+The deliverable for this assignment is a jupyter notebook ( HW2_sbg389.ipynb) that uses two different datasets from the CUSP data facility that matched the requirements from the assignment:
 
+- The Energy and Water Data Disclosure for Local Law 84 (2012) (https://datahub.cusp.nyu.edu/dataset/5gde-fmj3)
+- The Wathershed Quality Data (https://datahub.cusp.nyu.edu/dataset/y43c-5n92)
 
-## Extra Credit Assignment : work with dates in Pandas
+The notebook uses pandas dataframes in order to read the csv formatted datasets (directly from the CUSP data facility), manipulate its content and plot it.
+
+In the case of the second dataset, where we have to manipulate the string representation of dates and convert them to date objects (so pandas can plot them adequately) I used the dataframe.to_datetime method
+
+### Work Breakdown:
+
+General idea and walk through by Luis Fernando Melchor Fernandez (presented to the group (Sebastian Bania, Sofiya Elyukin Jonathan D Geis)
+
+Coding for this particular notebook instance Sebastian Bania.
