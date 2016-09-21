@@ -68,6 +68,7 @@ for i in range (0, numberOfActiveBuses):
     onwardCallsDict = vehicleActivityArray[0]['VehicleActivity'][i] \
         ['MonitoredVehicleJourney']['OnwardCalls']
 
+    # Handle if Onward Call is empty
     if (onwardCallsDict!={}):
         df.loc[i,'Stop Status'] = vehicleActivityArray[0]['VehicleActivity'][i] \
             ['MonitoredVehicleJourney']['OnwardCalls']['OnwardCall'][0]['Extensions']['Distances'] \
@@ -78,6 +79,8 @@ for i in range (0, numberOfActiveBuses):
         df.loc[i,'Stop Status'] = 'N/A'
         df.loc[i,'Stop Name'] = 'N/A'
 
+# Print statement to debug output
 print (df)
 
+# write to file!
 df.to_csv(args.OUTFILE, index=False)
