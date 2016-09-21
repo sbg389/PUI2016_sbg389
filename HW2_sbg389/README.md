@@ -63,6 +63,7 @@ Luis Fernando Melchor Fernandez
 The deliverable for this assigment builds upon the previous assignment, but in this case, the output will be written to a csv file.
 
 The script shares the first two parameters with the previous, but adds a third parameter that is used to specify the output file location.
+
 I choose to use a pandas Data Frame to store and format the results from the API and write the csv.
 
     The API Key (necessary to make calls agains the service)
@@ -119,3 +120,8 @@ The notebook uses pandas dataframes in order to read the csv formatted datasets 
 
 In the case of the second dataset, where we have to manipulate the string representation of dates and convert them to date objects (so pandas can plot them adequately) I used the dataframe.to_datetime method
 
+### Work Breakdown:
+
+General idea and walk through by Luis Fernando Melchor Fernandez (presented to the group (Sebastian Bania, Sofiya Elyukin Jonathan D Geis)
+
+Coding for this particular notebook instance Sebastian Bania.
