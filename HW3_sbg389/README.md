@@ -56,7 +56,9 @@ Coding for this particular notebook instance by Sebastian Bania.
 
 ## Assignment 3: Notebook presenting the complete the z-test lab from lecture 3 
 
-The notebook presents a Null/alternative hypothesis statement and treatment, the adquisition of the data samples from the flat file on a github repo, the z-test and an interpretation of the Z value obtainined and its relation with the Null Hypothesis.
+This notebook orgnizes the problem presented at the end of lecture two where we looked into the changes of a bus route and we tried to discern if the new route was in average more or less lengthy than the original one. 
+
+The notebook presents a Null/alternative hypothesis statement and treatment, the adquisition of the data samples from the source file on a github repo, the z-test and an interpretation of the Z value obtainined and its relation with the Null Hypothesis.
 
 ### Work Breakdown:
 
