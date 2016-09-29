@@ -38,15 +38,17 @@ This deliverable presents the initial steps of a data analysis using the Citibik
 
 The general flow of the notebook follows:
 
-1) Fetch the Citibike Data from the AWS Blob and store a local copy
+1) Present the general idea and state my Null and Alternate Hypothesis
 
-2) Use pandas to read in the local copy of the CitiBike files,into a DF
+2) Fetch the Citibike Data from the AWS Blob and store a local copy
 
-3) Display the top few rows of the DF in your notebook. This table must be rendered.
+3) Use pandas to read in the local copy of the CitiBike files,into a DF
 
-4) Display the reducted dataframe. This table must be rendered.
+4) Display the top few rows of the DF in your notebook. This table must be rendered.
 
-5) Plot the data distributions.
+5) Display the reducted dataframe. This table must be rendered.
+
+6) Plot your data distributions.
 
 ### Work Breakdown:
 
