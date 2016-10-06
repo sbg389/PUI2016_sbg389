@@ -42,7 +42,7 @@ http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0134756
 
 | **Statistical Analyses	|  IV(s)  |  IV type(s) |  DV(s)  |  DV type(s)  |  Control Var | Control Var type  | Question to be answered | _H0_ | alpha | link to paper **| 
 |:----------:|:----------|:------------|:-------------|:-------------|:------------|:------------- |:------------------|:----:|:-------:|:-------|
-T-Test	|  1, Cohorts | Categorical | 1, Mean Cognitive test Score| interval | ---- | ---- | Does Cognitive Function Increase across generations for healthy elder? | Mean Score in Cohort 2001 <= Mean Score in Cohort 2001 | 0.05 | http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0078646 
+T-Test	|  1, Cohorts | Categorical | 1, Mean Cognitive test Score| interval | ---- | ---- | Does Cognitive Function Increase across generations for healthy elder? | Mean Score in Cohort 01- <= Mean Score in Cohort 91- | 0.05 | http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0078646 
 |
   |||||||||
  
