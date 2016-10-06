@@ -1,5 +1,13 @@
 #PUI 2016 HW 4
 
+##Assignment I
+
+On this assignment I did a peer review of the HW3 Citibike assignment for Chen Chongyang (cc5502), The assignment can be found at
+
+https://github.com/sbg389/PUI2016_cc5502/blob/master/HW3_cc5022/CitibikeReview_sbg389.md
+
+I worked on this assignment alone.
+
 ##Assignment II
 
 This assignment looks at reviewing the chocices for satistical tests in schentiic literature. Two types of tests will be choosen from the  A. Marengo CSU "When to use what test?" document
@@ -34,7 +42,7 @@ http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0134756
 
 | **Statistical Analyses	|  IV(s)  |  IV type(s) |  DV(s)  |  DV type(s)  |  Control Var | Control Var type  | Question to be answered | _H0_ | alpha | link to paper **| 
 |:----------:|:----------|:------------|:-------------|:-------------|:------------|:------------- |:------------------|:----:|:-------:|:-------|
-T-Test	|  1, Cohorts | Categorical | 1, Mean Cognitive test Score| interval | ---- | ---- | Does Cognitive Function Increase across generations for healthy elder? | Mean Score in Cohort 2001 <= Mean Score in Cohort 2001 | 0.05 | http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0078646 
+T-Test	|  1, Cohorts | Categorical | 1, Mean Cognitive test Score| interval | ---- | ---- | Does Cognitive Function Increase across generations for healthy elder? | Mean Score in Cohort 01- <= Mean Score in Cohort 91- | 0.05 | http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0078646 
 |
   |||||||||
  
@@ -42,6 +50,23 @@ T-Test	|  1, Cohorts | Categorical | 1, Mean Cognitive test Score| interval | --
 
 | **Statistical Analyses      | IV(s)    | IV type(s)  | DV(s)  | DV type(s)  | Control Var  | Control Var type |  Question to be answered | _H0_ | alpha | link to paper** |
 |:--------------:|:--------------:|:------:|:---------:|:-----------:|:-----------:|:------------:|:------------------:|:-------:|:---------:|:---------|
-Path Analysis  |  maternal death | categorical | annual income, expenditure per capita | continuous | n/a | n/a | How does maternal death impact household economy? |       |     | [Impact of Maternal Death on Household Economy in Rural China: A Prospective Path Analysis] (http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0134756) |
+Path Analysis (1)  |  **True IV**: maternal death; **Mediators**: direct costs, postitive coping, negative coping, husband remarried, newborn alive | **True IV**: categorical; **Mediators**: continuous, continuous, continuous, categorical, categorical | annual income | continuous | n/a | n/a | How does maternal death impact household economy? | Maternal death has no affect on the family's income    |     | [Impact of Maternal Death on Household Economy in Rural China: A Prospective Path Analysis] (http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0134756) |
+Path Analysis (2)  |  **True IV**: maternal death; **Mediators**: direct costs, postitive coping, negative coping, husband remarried, newborn alive | **True IV**: categorical; **Mediators**: continuous, continuous, continuous, categorical, categorical | expenditure per capita | continuous | n/a | n/a | How does maternal death impact household economy? | Maternal death has no affect on the family's expenditure per capita  |     | [Impact of Maternal Death on Household Economy in Rural China: A Prospective Path Analysis] (http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0134756) |
  |||||||||||||||||||||
+
+##Assignment III
+
+On this assignment I reproduced the analysis of the Hard to Employ programs for NY. The notebook is https://github.com/sbg389/PUI2016_sbg389/blob/master/HW4_sbg389/HW4_Prission.ipynb
+
+For this assignment I worked with Sofiya Elyukin and Marc Edward Toneatto, we met and did the calculations individually and later shared and discussed the results.
+
+##Assignment IV
+
+On this assignment I worked with the skeleton notebook provided by federica (https://github.com/fedhere/PUI2016_fb55/blob/master/HW4_fb55/citibikes_compare_distributions.ipynb) to perform a series of tests to assess correlation between 2 samples of citibike data. In particular
+
+  Pearson’s test
+  Spearman’s test
+  K-S test
+
+For this assignment I discussed part of the solution with Sofiya Elyukin
 
