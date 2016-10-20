@@ -16,9 +16,11 @@ This notebook presents an analysis on the energy consumption of manhattan buildi
 
 ### Work Breakdown: 
 
-Notebook skeleton by Sebastian Bania
+Notebook skeleton, obtaining and arranging data  by Sebastian Bania
 
 Met and discussed the fitting, data cleanning, models and tests and refined the notebook togheter with Sofiya Elyukin, Luis Fernando Melchor Fernandez and Benjamin Joseph Alpert.
+
+The final work on the fitting was contributed by Fernando
 
 ##Assignment II
 
