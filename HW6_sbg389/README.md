@@ -6,12 +6,13 @@
 
 This notebook presents an analysis on the energy consumption of manhattan buildings. The data used was sourced from the NYC open data site, and the main steps of the analysis were:
 
-1. Adcquiring and transforming the data (Donwload and make a local copy of the pluto dataset, read the energy consuption dataset directly from the web, load all the date into padas dataframws)
+1. Acquiring and transforming the data (Donwload and make a local copy of the pluto dataset, read the energy consuption dataset directly from the web, load all the date into padas dataframws)
 2. Remove unnecesary columns, replace hard to manage column names, create a calculated column for total energy consumtion and find a common column to both dataframes.
 4. Produce a series of plots to explore the data and present the relation between number of units and total energy consumption
 5. Create linear models to predict both energy consumption based on number of units and viceversa.
 6. Calculate the  chi-square values for the models in order to assess which one was better suited for the data.
 7. Fit a 2nd order polynomial to the scatter plot.
+8. Calculating the Likelihood ratio test for the Units vs Energy line fit and the Units vs Energy 2-nd degree polynomial fit 
 
 ### Work Breakdown: 
 
