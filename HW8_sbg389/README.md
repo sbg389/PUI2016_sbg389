@@ -4,4 +4,6 @@
 
 ### Creating a Plot 
 
-This notebook uses open economic data to build a plot
+This notebook uses open economic data to build a plot.
+
+I worked on this assignment alone (and I felt lonely)
