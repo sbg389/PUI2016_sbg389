@@ -33,3 +33,14 @@ Inform your results by linking datasets
 We started this notebook in class and worked togheter with the group (Sofiya Elyukin Jonathan D Geis Luis Fernando Melchor Fernandez Benjamin Joseph Alpert Scott Smith) with whom we completed almost half of the notebook.
 
 I finished the rest of the work alone, using a function from Scot Smith's notebook.
+
+## Assignment III
+
+Review HW7 Plots for 
+
+Zhou Xuan, xz694 (Woebkenberg Tyler, tw1574)
+
+Both reviews were created as md files on the forks of their repos for HW7 or HW8 (depending on their choice for their plot).
+
+Aditionally, copies of the md files were added to this folder.
+
