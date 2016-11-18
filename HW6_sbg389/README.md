@@ -39,3 +39,5 @@ https://github.com/sbg389/PUI2016_sbg389/blob/master/HW3_sbg389/HW3_2_sbg389.ipy
 Initial draft by Sebastian Bania. Graph, review and adition to the sections by Sofiya Elyukin and Benjamin Joseph Alpert.
 
 
+# FBB 
+well done, see comments in the authorea article
